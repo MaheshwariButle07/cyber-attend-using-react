@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(cors())
 
 
-import { postSignUp,login } from "./controllers/user.js"
+import { postSignUp,postLogin } from "./controllers/user.js"
 
 
 
@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 });
 
 app.post('/signup', postSignUp);
-app.post("/login", login)
+app.post("/login", postLogin)
 
 
 

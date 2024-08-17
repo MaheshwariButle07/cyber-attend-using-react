@@ -36,7 +36,7 @@ const postSignUp = async (req, res) => {
       }
   }
 
-  const login = async(req,res)=>{
+  const postLogin = async(req,res)=>{
 
     const { email , password } = req.body
 
@@ -65,4 +65,4 @@ const postSignUp = async (req, res) => {
 
   }
 
-  export {postSignUp , login}
+  export {postSignUp , postLogin}
