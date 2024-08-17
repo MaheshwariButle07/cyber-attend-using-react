@@ -5,14 +5,6 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    gender: {
-        type: String,
-        required: true
-    },
-    age: {
-        type: Number,
-        required: true
-    },
     email: {
         type: String,
         required: true,
@@ -22,10 +14,27 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    dob: {
+        type: Date,
+        required: true
+    },
+    date_of_joining:{ 
+        type: Date,
+        required: true
+    },
+    experience: {
+        type :String,
+        required: true
+    },
+    position: {
+        type: String,
+        required: true
+    },
     profilePhoto: {
         type: String,
         required: true
     }
+
 },{
     timestamps: true
 });

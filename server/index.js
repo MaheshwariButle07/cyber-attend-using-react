@@ -24,7 +24,7 @@ connectDB();
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Welcome to Flexfit API"
+    message: "Welcome to Cyber-Attend API"
   })
 });
 
