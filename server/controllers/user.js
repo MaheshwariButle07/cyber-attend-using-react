@@ -3,20 +3,25 @@ import User from "../models/User.js";
 const postSignUp = async (req, res) => {
     const {
       fullName,
-      gender,
-      age,
-      email,
-      password,
-      profilePhoto
+        email,
+        password,
+        dob,
+        date_of_joining,
+        experience,
+        position,
+        profilePhoto
     } = req.body
   
     const user = new User({
       fullName,
-      gender,
-      age,
       email,
       password,
+      dob: new Date(dob),
+      date_of_joining : new Date(date_of_joining),
+      experience,
+      position,
       profilePhoto
+
     })
   
     try{const savedUser = await user.save();
@@ -50,7 +55,7 @@ const postSignUp = async (req, res) => {
    if(user){
     res.json({
       success:true,
-      message:"You Loggedin Successfully",
+      message:"Login Successfully...",
       data:user
     })
    }
@@ -58,7 +63,7 @@ const postSignUp = async (req, res) => {
    else{
     res.json({
       success:false,
-      message:"user not found",
+      message:"User not found",
       data:null
     })
    }
