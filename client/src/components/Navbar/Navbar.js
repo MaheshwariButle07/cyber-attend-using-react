@@ -84,22 +84,22 @@ function Navbar() {
 
         <ul type="none" className="mobile-menu-container">
           <Link to="/">
-            <li className="list"><img className="item-logo" src={home} /></li>
+            <li className="list"><img className="item-logo" src={home} alt=""/></li>
           </Link>
 
           <Link to="/calander">
-          <li className="list"><img className="item-logo" src={calander} /></li>
+          <li className="list"><img className="item-logo" src={calander}  alt=""/></li>
           </Link>
 
           <Link to="/signup">
-            <li className="list"><img className="item-logo" src={signup} /></li>
+            <li className="list"><img className="item-logo" src={signup} alt="" /></li>
           </Link>
 
           <li className="list">
             {User ? 
             (
               <li onClick={Logout} className="L-btn">
-                <img className="item-logo" src={logout} />
+                <img className="item-logo" src={logout}  alt=""/>
               </li>
             ) 
 
@@ -107,7 +107,7 @@ function Navbar() {
             :
             (
               <li onClick={Login} className="L-btn">
-                <img className="item-logo" src={login} />
+                <img className="item-logo" src={login} alt="" />
               </li>
             )}
           </li>
