@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './Login.css'
 import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios"
@@ -39,7 +40,7 @@ function Login() {
   return (
     <div>
       <Navbar/>
-      <h1 className="auth-heading">Before you start please Login first 🡆</h1>
+      <h1 className="auth-heading">Login Form 🡆</h1>
 
       <form className="auth-form">
         <label htmlFor="email" className="auth-form-heading">
@@ -49,7 +50,7 @@ function Login() {
           type="email"
           id="email"
           placeholder="email"
-          className="user-input"
+          className="user-input input-email"
           value={email}
           onChange={(e) => {
               setEmail(e.target.value )
@@ -63,7 +64,7 @@ function Login() {
           type="password"
           id="password"
           placeholder="password"
-          className="user-input"
+          className="user-input input-password"
           value={password}
           onChange={(e) => {
               setPassword(e.target.value)
@@ -72,15 +73,19 @@ function Login() {
 
         <button
           type="button"
-          className="auth-btn"
+          className = 'btn-login'
           onClick={login}
         >
           Login
         </button>
 
-        <Link to="/login" >
-          <p>Don't have an account? Signup</p>
-        </Link>
+        <div className='auth-link'>
+                    <Link to='/signup'>
+                    Don't have an account? Signup
+                    </Link>
+                </div>
+
+        
       </form>
 
       <Toaster />
