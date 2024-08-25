@@ -150,7 +150,7 @@ function Home() {
         </button>
 
       </div>
-      <p>{isInArea ? "You are within the 50 meter radius." : "You are outside the 50 meter radius."}</p>
+      
         
 
     </div>
