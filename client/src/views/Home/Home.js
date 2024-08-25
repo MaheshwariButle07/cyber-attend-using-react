@@ -1,8 +1,70 @@
 import React, { useEffect, useState } from 'react'
 import "./Home.css"
 import Navbar from "./../../components/Navbar/Navbar"
+import toast from 'react-hot-toast'
 
 function Home() {
+
+  //code for location
+
+  const [position,setPosition] = useState(null)
+  const [isInArea,setIsInArea]  = useState(false)
+
+  const location = { lat : 18.5574,lon : 73.9283};
+
+  const getDistance = (lat1,lat2,lon1,lon2)=>{
+    const R = 6371e3; // Earth's radius in meters
+
+    //convertin lat & lan from degree to radian 
+    const lat1Radian = lat1 * Math.PI / 180
+    const lat2Radian = lat2 * Math.PI / 180
+    const lon1Radian = lon1 * Math.PI / 180
+    const lon2Radian = lon2 * Math.PI / 180
+
+    //finding difference between 2 lat & lon
+    const DLat = lat2Radian - lat1Radian
+    const DLon = lon2Radian - lon1Radian
+
+    //approximate distance 
+    const approxDLon = DLon * R * Math.cos((lat1Radian+lat2Radian) / 2)
+    const approxDLat = DLat * R
+
+    return Math.sqrt(approxDLon * approxDLon + approxDLat * approxDLat)
+  }
+
+  useEffect(()=>{
+    const userLocation = (position) =>{
+      const {latitude,longitude} = position.coords
+      setPosition({lat : latitude , lon : longitude})
+    }
+
+    const error = (error) =>{
+      toast.error("error getting location",error)
+    }
+
+    const watchUserLocation = navigator.geolocation.watchPosition(userLocation,error,{enableHighAccuracy:true,timeout:20000})
+    
+
+    return () => {
+      navigator.geolocation.clearWatch(watchUserLocation)
+    }
+  })
+
+  useEffect(()=>{
+    if(position){
+      const distance = getDistance(position.lat,location.lat,position.lon,location.lon)
+
+      if(distance <= 50){
+        setIsInArea(true)
+      }
+      else{
+        setIsInArea(false)
+        toast.error("You are out of area")
+      }
+    }
+  },[position])
+
+  //code for timer
 
   const [time,setTime] = useState(()=>{
     const savedTime = localStorage.getItem("timer")
@@ -52,7 +114,9 @@ function Home() {
   },[isActive,time.seconds])
 
   const startStopbtn = () => {
-    setIsActive(!isActive)
+    if(isInArea){
+      setIsActive(!isActive)
+    }
   }
 
 
@@ -86,10 +150,8 @@ function Home() {
         </button>
 
       </div>
-
-
-
-
+      <p>{isInArea ? "You are within the 50 meter radius." : "You are outside the 50 meter radius."}</p>
+        
 
     </div>
   )
