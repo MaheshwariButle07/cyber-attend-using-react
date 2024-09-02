@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./Home.css"
 import Navbar from "./../../components/Navbar/Navbar"
 import toast from 'react-hot-toast'
+import Greeting from '../../components/Greeting/Greeting'
 
 function Home() {
 
@@ -119,10 +120,13 @@ function Home() {
     }
   }
 
+  
+
 
   return (
     <div>
       <Navbar />
+      <Greeting/>
 
       <div className='clock-container'>
 
