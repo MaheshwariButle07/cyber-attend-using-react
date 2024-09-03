@@ -6,7 +6,7 @@ body {
 
 .auth-heading {
     text-align: center;
-    margin: 10px;
+    margin-bottom: 20px;
 }
 
 .auth-form {
@@ -55,7 +55,7 @@ body {
     border-radius: 10px;
     padding: 4px 10px;
     box-shadow: 1px 1px 1px 1px black;
-
+    margin-top: 10px
 }
 
 .auth-btn:hover {

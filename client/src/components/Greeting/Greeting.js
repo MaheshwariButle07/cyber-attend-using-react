@@ -10,12 +10,12 @@ function Greeting() {
             } else if (currentHour < 18) {
               return 'Good Afternoon👋🏼 ';
             } else {
-             return 'Good Evening🌇';
+             return 'Good Evening🌇 hjcbukkbubcsubdugdiagksuadb';
             }
            };
   return (
     <div>
-       <h1 className='greeting'>{getGreeting()}</h1>
+       <marquee scrollamount='12' className='greeting blink'>{getGreeting()}</marquee>
      </div>
   )
 }

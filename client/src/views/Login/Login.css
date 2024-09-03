@@ -1,26 +1,37 @@
-.input-email{
+.input-email {
     margin-left: 49px;
 }
 
-.input-password{
+.input-password {
     margin-left: 24px;
 }
 
-.btn-login{
+.btn-login {
     font-size: 17px;
-    margin-left: 10px;
-    margin-top: 5px;
+    margin-top: 30px;
     border: none;
     background-color: #004466;
-    color:white;
+    color: white;
     border-radius: 10px;
     padding: 4px 10px;
-    box-shadow: 1px 1px 1px 1px black;   
+    box-shadow: 1px 1px 1px 1px black;
+    display: block;
+    margin: 0 auto;
 }
 
-.btn-login:hover{
+.btn-login:hover {
     background-color: #0077b3;
-    color: white; 
+    color: white;
     box-shadow: 1px 1px 1px 1px black;
     width: 65px;
 }
+
+ .remember-container{
+margin-top: 20px;
+   
+}
+
+.remember_me{
+    margin-left: 3px;
+}
+
