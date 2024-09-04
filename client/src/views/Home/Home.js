@@ -10,8 +10,10 @@ function Home() {
   const [position,setPosition] = useState(null)
   const [isInArea,setIsInArea]  = useState(false)
 
-  const location = { lat : 18.5574,lon : 73.9283};
+  const location = { lat : 18.5206,lon : 73.8564};
 
+
+  //Haversine Formula
   const getDistance = (lat1,lat2,lon1,lon2)=>{
     const R = 6371e3; // Earth's radius in meters
 
@@ -71,7 +73,10 @@ function Home() {
 
     return savedTime ? JSON.parse(savedTime) : {hours : 0 , minutes : 0 , seconds : 0}
   })
+
+
   const [isActive,setIsActive] = useState(false)
+
   const hours = time.hours.toString().padStart(2, "0");
   const minutes = time.minutes.toString().padStart(2, "0");
 
@@ -116,6 +121,10 @@ function Home() {
   const startStopbtn = () => {
     if(isInArea){
       setIsActive(!isActive)
+    }
+    else{
+      setIsActive(false)
+      toast.error("you are out of range")
     }
   }
 
