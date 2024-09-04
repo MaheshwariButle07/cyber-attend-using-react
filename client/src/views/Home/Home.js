@@ -6,6 +6,7 @@ import Greeting from '../../components/Greeting/Greeting'
 import holidays from '../../holidayData'
 import Holidays_card from '../../components/Holidays_card/Holidays_card'
 import { Link } from 'react-router-dom'
+import Footer from '../../components/Footer/Footer'
 
 function Home() {
 
@@ -208,6 +209,9 @@ function Home() {
         }
       </div>
       </div>
+
+
+      <Footer/>
     </div>
   )
 }

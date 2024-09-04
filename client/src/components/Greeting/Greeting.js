@@ -10,7 +10,7 @@ function Greeting() {
             } else if (currentHour < 18) {
               return 'Good Afternoon👋🏼 ';
             } else {
-             return 'Good Evening🌇 hjcbukkbubcsubdugdiagksuadb';
+             return 'Good Evening🌇 ';
             }
            };
   return (
