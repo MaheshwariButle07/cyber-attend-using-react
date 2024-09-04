@@ -68,8 +68,7 @@
 .holiday_heading_container{
     display: flex;
     align-items: center;
-    padding-right:10px;
- 
+    position: relative;
  
 }
 
@@ -91,12 +90,16 @@
 
 .view_all{
     font-size: 20px;
+    position: absolute;
+    right:20px;
+    bottom: 18px;
 }
 
 .celebration_heading_container{
     display: flex;
     align-items: center;
     padding-right:10px;
+    position: relative;
   
  
 }

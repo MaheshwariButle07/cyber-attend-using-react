@@ -6,7 +6,8 @@ function Holiday({id,month,date,day,holidays_name}) {
   return (
     <>
     <div>Holiday</div>
-    <div className=''>
+   
+      <div>
     {
           holidays.map((leave, id) => {
             const {
@@ -17,6 +18,7 @@ function Holiday({id,month,date,day,holidays_name}) {
             } = leave
 
             return (
+              <div className='holiday_hero_section'>
               <Holidays_card
                 id={id}
                 month={month}
@@ -25,10 +27,12 @@ function Holiday({id,month,date,day,holidays_name}) {
                 holidays_name={holidays_name}
 
               />
+              </div>
             )
           })
         }
 </div>
+
     </>
   )
 }
