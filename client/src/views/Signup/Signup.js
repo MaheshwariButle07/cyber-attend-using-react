@@ -5,6 +5,7 @@ import toast, { Toaster } from 'react-hot-toast'
 import { Link } from 'react-router-dom'
 import './../../index.css'
 import Navbar from '../../components/Navbar/Navbar'
+import logoImg from './logo.png'
 
 function SignUp() {
     const [user, setUser] = useState({
@@ -52,12 +53,14 @@ function SignUp() {
 
 
     return (
-        <div>
+        <div className='body'>
             <Navbar />
-            <h1 className='auth-heading'>Signup Form 🡆</h1>
+            
+           
 
             <form className='auth-form'>
 
+            <h1 className='auth-heading'>Signup Form </h1>  
                 <p className='auth-form-heading'>
                     Enter Username:
                     <input

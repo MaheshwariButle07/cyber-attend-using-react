@@ -1,0 +1,19 @@
+.greeting{
+    text-align: center;
+    font-size:25px;
+    font-weight: 500;
+    font-style: italic;
+
+}
+
+.blink {
+    animation: blinker 1.5s linear infinite;
+    color: black;
+    font-family: sans-serif;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
