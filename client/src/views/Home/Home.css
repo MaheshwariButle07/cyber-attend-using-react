@@ -9,6 +9,7 @@
     box-shadow: 1px 1px 7px grey;
     border-radius: 10px;
     position: relative;
+    background-color: rgb(255, 254, 254);
     /* background-color: white; */
 
 }
@@ -68,6 +69,8 @@
     display: flex;
     align-items: center;
     padding-right:10px;
+ 
+ 
 }
 
 .holiday_container {
@@ -88,4 +91,17 @@
 
 .view_all{
     font-size: 20px;
+}
+
+.celebration_heading_container{
+    display: flex;
+    align-items: center;
+    padding-right:10px;
+  
+ 
+}
+
+.celebration_img{
+    height: 800px;
+    width: 100%;
 }
