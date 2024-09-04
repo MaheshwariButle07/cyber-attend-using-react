@@ -56,8 +56,8 @@ function Navbar() {
             <li className="list">Home</li>
           </Link>
 
-          <Link to="/bmi-calculator">
-            <li className="list">Calander</li>
+          <Link to="/calendar">
+            <li className="list">Calendar</li>
           </Link>
 
           <Link to="/signup">
@@ -87,7 +87,7 @@ function Navbar() {
             <li className="list"><img className="item-logo" src={home} alt=""/></li>
           </Link>
 
-          <Link to="/calander">
+          <Link to="/calendar">
           <li className="list"><img className="item-logo" src={calander}  alt=""/></li>
           </Link>
 

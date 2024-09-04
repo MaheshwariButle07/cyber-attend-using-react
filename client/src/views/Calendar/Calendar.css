@@ -1,0 +1,99 @@
+.calendar {
+    width: 500px;
+    margin: 80px auto;
+    border: 1.5px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom:10px ;
+    box-shadow: 0 4px 12 px black;
+    font-family: 'roboto','sans-serif';
+    font-size: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b670f4;
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .header button{
+    background:none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    opacity: .7;  /* transperency */
+    cursor: pointer;
+   }
+  
+  .day-names, .days {
+    display: grid; 
+    grid-template-columns: repeat(7, 1fr);
+   
+  }
+  
+  .day-name, .day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .day {
+    cursor: pointer;
+    border:2px solid #f0f0f0 ;
+    transition: background-color 0.3s;
+  }
+  
+  .today {
+    background-color:#b670f4;
+     border-radius: 5px;
+     text-align: center; 
+     font-weight: bold;
+  }
+  
+  .selected {
+    border: 2px solid blue;
+  }
+  
+  .status-p {
+    background-color: lightgreen; /* present */
+  }
+  
+  .status-a {
+    background-color: lightcoral; /* absent */
+  }
+  
+  .status-f {
+    background-color: lightgray; /* future */
+  }
+  
+  .status-prev-absent {
+    border: 2px solid red; /* Highlight previous day's absence */
+  }
+  
+  .empty-day {
+    background-color: transparent;
+  }
+  
+  
+  
+  @media screen and (max-width:1000px) {
+    .calander{
+      width: 80%;
+     }
+  
+     .header{
+      font-size: 30px;
+      font-weight: bold;
+     }
+  
+     .header button{
+      font-size: 30px;
+     }
+  }

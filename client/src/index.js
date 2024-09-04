@@ -5,6 +5,7 @@ import Home from './views/Home/Home';
 import Login from './views/Login/Login';
 import Signup from './views/Signup/Signup';
 import Holiday from './views/Holiday/Holiday';
+import Calendar from './views/Calendar/Calendar';
 
 
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
 {
   path: '/holidays',
   element: <Holiday/>
+},
+{
+  path: '/calendar',
+  element: <Calendar/>
 },
 {
   path: '*',
