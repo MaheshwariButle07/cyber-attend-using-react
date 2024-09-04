@@ -6,6 +6,7 @@ import Greeting from '../../components/Greeting/Greeting'
 import holidays from '../../holidayData'
 import Holidays_card from '../../components/Holidays_card/Holidays_card'
 import { Link } from 'react-router-dom'
+import Footer from '../../components/Footer/Footer'
 
 function Home() {
 
@@ -14,9 +15,9 @@ function Home() {
   const [position, setPosition] = useState(null)
   const [isInArea, setIsInArea] = useState(false)
 
-  const location = { lat: 18.5574, lon: 73.9283 };
+  const location = { lat : 21.164201,lon : 79.082129};
 
-  const getDistance = (lat1, lat2, lon1, lon2) => {
+  const getDistance = (lat1,lat2,lon1,lon2)=>{
     const R = 6371e3; // Earth's radius in meters
 
     //convertin lat & lan from degree to radian 
@@ -75,7 +76,7 @@ function Home() {
 
     return savedTime ? JSON.parse(savedTime) : { hours: 0, minutes: 0, seconds: 0 }
   })
-  const [isActive, setIsActive] = useState(false)
+  const [isActive,setIsActive] = useState(false)
   const hours = time.hours.toString().padStart(2, "0");
   const minutes = time.minutes.toString().padStart(2, "0");
 
@@ -120,6 +121,10 @@ function Home() {
   const startStopbtn = () => {
     if (isInArea) {
       setIsActive(!isActive)
+    }
+    else{
+      setIsActive(false)
+      toast.error("you are out of range")
     }
   }
 
@@ -205,6 +210,7 @@ function Home() {
         }
       </div>
       </div>
+
       <br/>
       <hr/> <hr/>
 
@@ -218,6 +224,11 @@ function Home() {
      
    
       </div>
+
+
+
+      <Footer/>
+
     </div>
   )
 }
