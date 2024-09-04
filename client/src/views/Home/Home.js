@@ -185,6 +185,7 @@ function Home() {
       <hr/> <hr/>
 
       <div className='holiday_container'>
+     
 
         {
           holidays.slice(0,limit).map((leave, id) => {
@@ -210,8 +211,24 @@ function Home() {
       </div>
       </div>
 
+      <br/>
+      <hr/> <hr/>
+
+<div>
+      <div className='celebration_heading_container'>
+      <h1 className='holiday_title'>Celebrations🎂🎁 </h1>
+      <Link  to="./holidays" className='view_all' onClick={viewAll}>View All</Link>
+
+      </div>
+      <hr/> <hr/>
+     
+   
+      </div>
+
+
 
       <Footer/>
+
     </div>
   )
 }

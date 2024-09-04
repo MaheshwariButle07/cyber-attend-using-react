@@ -1,11 +1,11 @@
 import React from 'react'
 import "./Holidays_card.css"
-import holidays from '../../holidayData'
+
 
 function Holidays_card({ month, date, day, holidays_name }) {
   return (
-    <>
-    
+    < >
+
       <div className='holiday_card'>
         <div className='month_title'>
           <h2 >{month}</h2>
