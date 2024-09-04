@@ -1,7 +1,6 @@
-
 .calendar {
     width: 500px;
-    margin: 20px auto;
+    margin: 80px auto;
     border: 1.5px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
@@ -18,7 +17,7 @@
     background-color: #b670f4;
     color: white;
     padding: 10px;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
   }
   
@@ -26,7 +25,7 @@
     background:none;
     border: none;
     color: white;
-    font-size: 15px;
+    font-size: 30px;
     opacity: .7;  /* transperency */
     cursor: pointer;
    }

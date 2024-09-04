@@ -58,6 +58,7 @@ function Calendar() {
    <>
    <Navbar />
 
+    <div className='c-container'>
     <div className='calendar'>
       <div className='header'>
         <button className='header-button' onClick={prevMonth}>&lt;</button>
@@ -89,6 +90,7 @@ function Calendar() {
           </div>
         ))}
       </div>
+    </div>
     </div>
 
     <Footer />

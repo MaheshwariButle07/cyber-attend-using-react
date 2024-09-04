@@ -3,6 +3,11 @@
     margin: 0;
 }
 
+.footer{
+    position: relative;
+    bottom: 0;
+}
+
 
 .footer-container{
     background-color: #006699;
@@ -12,9 +17,7 @@
     align-items: center;
     justify-content: space-evenly;
     position: absolute;
-    bottom: 0;
-    width: 98.5%;
-  
+    width: 100%;
 
 }
 
