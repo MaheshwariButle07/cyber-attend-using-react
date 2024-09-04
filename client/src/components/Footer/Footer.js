@@ -36,7 +36,7 @@ function Footer() {
   }, []);
 
   return (
-    <div>
+    <div className="footer">
       <div className="footer-container">
 
         
@@ -91,7 +91,7 @@ function Footer() {
           </div>
         </ul>
 
-        <ul type="none" className="footer-social-container">
+        <ul type="none" className="footer-contact-container">
           <h3>Contact Us : </h3>
           <div>
 
