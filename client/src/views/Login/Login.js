@@ -5,6 +5,7 @@ import toast, { CheckmarkIcon, Toaster } from "react-hot-toast";
 import axios from "axios"
 import "./../../index.css"
 import Navbar from "../../components/Navbar/Navbar";
+import logoImg from "../../components/Navbar/logo.png"
 
 function Login() {
 
@@ -42,7 +43,13 @@ function Login() {
       <Navbar />
 
       <form className="auth-form">
-        <h1 className="auth-heading">Login Form </h1>
+      <div className="auth-heading-container">
+          <img className="logo" src={logoImg} alt="logo-img" />
+         
+         <p className="auth-headind-sepretor">|</p>
+
+          <h1 className="auth-heading">Login Form </h1>
+        </div>
         <label htmlFor="email" className="auth-form-heading">
           Enter email:
         </label>
