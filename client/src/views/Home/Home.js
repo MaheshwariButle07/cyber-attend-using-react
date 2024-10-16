@@ -3,9 +3,7 @@ import "./Home.css"
 import Navbar from "./../../components/Navbar/Navbar"
 import toast from 'react-hot-toast'
 import Greeting from '../../components/Greeting/Greeting'
-import holidays from '../../holidayData'
-import Holidays_card from '../../components/Holidays_card/Holidays_card'
-import { Link } from 'react-router-dom'
+
 import Footer from '../../components/Footer/Footer'
 
 function Home() {
@@ -130,16 +128,7 @@ function Home() {
     }
   }
 
-  const [limit, setLimit] = useState(4)
-  const viewAll = () => {
-    if (limit < holidays.length) {
-      setLimit(limit + 1);
-    }
-  };
-
-  
-
-
+ 
 
   return (
     <div>
@@ -175,60 +164,8 @@ function Home() {
           {isActive ? "Clock-Out" : "Clock-In"}
         </button>
 
-      </div>
-      <br/>
-      <hr/> <hr/>
-
-      <div>
-        <div className='holiday_heading_container'>
-      <h1 className='holiday_title'>Holidays</h1>
-      <Link  to="./holidays" className='view_all' onClick={viewAll}>View All</Link>
-      </div>
-      <hr/> <hr/>
-
-      <div className='holiday_container'>
-     
-
-        {
-          holidays.slice(0,limit).map((leave, id) => {
-            const {
-              month,
-              date,
-              day,
-              holidays_name
-            } = leave
-
-            return (
-              <Holidays_card
-              key ={id}
-                id={id}
-                month={month}
-                date={date}
-                day={day}
-                holidays_name={holidays_name}
-
-              />
-            )
-          })
-        }
-      </div>
-      </div>
-
-      <br/>
-      <hr/> <hr/>
-
-<div>
-      <div className='celebration_heading_container'>
-      <h1 className='holiday_title'>Celebrations🎂🎁 </h1>
-      <Link  to="./holidays" className='view_all' onClick={viewAll}>View All</Link>
-
-      </div>
-      <hr/> <hr/>
-     
-   
-      </div>
-
-
+    </div>
+    <br/>
 
       <Footer/>
 
