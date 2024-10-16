@@ -14,8 +14,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     background-color: #f5784b;
     color: white;
+
+    background-color: #05505a;
+    color: #e4c19d;
+
     padding: 10px;
     font-size: 30px;
     font-weight: bold;
@@ -24,7 +29,7 @@
   .header button{
     background:none;
     border: none;
-    color: white;
+    color: #e4c19d;
     font-size: 30px;
     opacity: .7;  /* transperency */
     cursor: pointer;

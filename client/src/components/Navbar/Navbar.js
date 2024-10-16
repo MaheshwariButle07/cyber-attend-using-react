@@ -8,6 +8,7 @@ import calander from "./icons/calander.png"
 import signup from "./icons/signup.png"
 import login from "./icons/login.png"
 import logout from "./icons/logout.png"
+import logoImg from "./logo.png"
 
 
 
@@ -41,16 +42,10 @@ function Navbar() {
   return (
     <div>
       <div className="nav-bar-container">
-        <div className="profile-container">
-          <img
-            src={User ? User.profilePhoto : defaltProfileImage}
-            alt="profile-image"
-            className="profile-image"
-          />
+        
+        <img className="logo" src={logoImg} alt="logo-img"/>
 
-          <p className="user-name">{User ? User.fullName : "No User"}</p>
-        </div>
-
+        
         <ul type="none" className="list-container">
           <Link to="/">
             <li className="list">Home</li>
@@ -112,6 +107,16 @@ function Navbar() {
             )}
           </li>
         </ul>
+
+        <div className="profile-container">
+          <img
+            src={User ? User.profilePhoto : defaltProfileImage}
+            alt="profile-image"
+            className="profile-image"
+          />
+
+          <p className="user-name">{User ? User.fullName : "No User"}</p>
+        </div>
       </div>
 
     </div>
