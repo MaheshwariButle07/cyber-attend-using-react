@@ -10,19 +10,19 @@
     font-size: 17px;
     margin-top: 30px;
     border: none;
-    background-color: #004466;
+    background-color: #5b6658;
     color: white;
     border-radius: 10px;
     padding: 4px 10px;
-    box-shadow: 1px 1px 1px 1px black;
+    box-shadow: 1px 1px 1px 1px #8c9484;
     display: block;
     margin: 0 auto;
 }
 
 .btn-login:hover {
-    background-color: #0077b3;
+    background-color: #8c9484;
     color: white;
-    box-shadow: 1px 1px 1px 1px black;
+    box-shadow: 1px 1px 1px 1px #5b6658;
     width: 65px;
 }
 

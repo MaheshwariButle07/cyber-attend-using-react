@@ -3,8 +3,10 @@ import "./Home.css"
 import Navbar from "./../../components/Navbar/Navbar"
 import toast from 'react-hot-toast'
 import Greeting from '../../components/Greeting/Greeting'
-
 import Footer from '../../components/Footer/Footer'
+import celebrationCal from './party.png'
+import holidayCal from './holiday.png'
+import { Link } from 'react-router-dom'
 
 function Home() {
 
@@ -13,9 +15,9 @@ function Home() {
   const [position, setPosition] = useState(null)
   const [isInArea, setIsInArea] = useState(false)
 
-  const location = { lat : 21.164201,lon : 79.082129};
+  const location = { lat: 21.164201, lon: 79.082129 };
 
-  const getDistance = (lat1,lat2,lon1,lon2)=>{
+  const getDistance = (lat1, lat2, lon1, lon2) => {
     const R = 6371e3; // Earth's radius in meters
 
     //convertin lat & lan from degree to radian 
@@ -54,8 +56,8 @@ function Home() {
   })
 
   useEffect(() => {
-   
-      if (position) {
+
+    if (position) {
       const distance = getDistance(position.lat, location.lat, position.lon, location.lon)
 
       if (distance <= 50) {
@@ -66,7 +68,7 @@ function Home() {
         toast.error("You are out of area")
       }
     }
-  
+
   }, [position])
 
   //code for timer
@@ -76,7 +78,7 @@ function Home() {
 
     return savedTime ? JSON.parse(savedTime) : { hours: 0, minutes: 0, seconds: 0 }
   })
-  const [isActive,setIsActive] = useState(false)
+  const [isActive, setIsActive] = useState(false)
   const hours = time.hours.toString().padStart(2, "0");
   const minutes = time.minutes.toString().padStart(2, "0");
 
@@ -122,13 +124,13 @@ function Home() {
     if (isInArea) {
       setIsActive(!isActive)
     }
-    else{
+    else {
       setIsActive(false)
       toast.error("you are out of range")
     }
   }
 
- 
+
 
   return (
     <div>
@@ -164,10 +166,34 @@ function Home() {
           {isActive ? "Clock-Out" : "Clock-In"}
         </button>
 
-    </div>
-    <br/>
+      </div>
+      <br />
+      <hr /><hr />
 
-      <Footer/>
+
+      <div className='home-card-container'>
+        <div className='home-card-container-item'>
+          <div>
+            <h3>Celebrations</h3>
+          </div>
+          <img src={celebrationCal} alt='celerbation' className='home-card-img' />
+
+          <button className='btn-view-all'>View All</button>
+        </div>
+
+
+        <div className='home-card-container-item'>
+          <div>
+            <h3>Holidays</h3>
+          </div>
+          <img src={holidayCal} alt='holidays' className='home-card-img' />
+
+          <button className='btn-view-all'>View All</button>
+        </div>
+
+      </div>
+
+      <Footer />
 
     </div>
   )
