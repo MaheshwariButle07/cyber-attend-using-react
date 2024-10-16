@@ -7,7 +7,8 @@ function Holidays_card({ month, date, day, holidays_name }) {
     < >
 
       <div className='holiday_card'>
-        <div className='month_title'>
+        <button >View More</button>
+        {/* <div className='month_title'>
           <h2 >{month}</h2>
         </div>
 
@@ -17,7 +18,7 @@ function Holidays_card({ month, date, day, holidays_name }) {
         </div>
         <div>
         <h2 className='holiday_name'>{holidays_name}</h2>
-        </div>
+        </div> */}
         
       </div>
      

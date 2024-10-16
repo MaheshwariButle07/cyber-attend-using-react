@@ -14,7 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #b670f4;
+    background-color: #f5784b;
     color: white;
     padding: 10px;
     font-size: 30px;
@@ -51,7 +51,7 @@
   }
   
   .today {
-    background-color:#b670f4;
+    background-color:#f5784b;
      border-radius: 5px;
      text-align: center; 
      font-weight: bold;

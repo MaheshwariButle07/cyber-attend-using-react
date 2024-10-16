@@ -56,7 +56,8 @@ function Home() {
   })
 
   useEffect(() => {
-    if (position) {
+   
+      if (position) {
       const distance = getDistance(position.lat, location.lat, position.lon, location.lon)
 
       if (distance <= 50) {
@@ -67,6 +68,7 @@ function Home() {
         toast.error("You are out of area")
       }
     }
+  
   }, [position])
 
   //code for timer
@@ -198,6 +200,7 @@ function Home() {
 
             return (
               <Holidays_card
+              key ={id}
                 id={id}
                 month={month}
                 date={date}
