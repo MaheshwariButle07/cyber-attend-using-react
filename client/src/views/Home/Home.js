@@ -167,8 +167,13 @@ function Home() {
         </button>
 
       </div>
-      <br />
-      <hr /><hr />
+    
+      <br/> <br/>
+
+
+      <div>
+        <h1 className='home-page-heading'>Events :</h1>
+      </div>
 
 
       <div className='home-card-container'>
@@ -192,7 +197,56 @@ function Home() {
         </div>
 
       </div>
+<br/> <br/>
 
+      <div>
+        <h1 className='home-page-heading'>Overview :</h1>
+      </div>
+
+      <div className='cards_container'>
+        <div className='cards-item'>
+          <div className='cards-title'>
+            Total Days
+          </div>
+
+          <div className='cards-days'>
+            <p >31</p>
+          </div>
+        </div>
+
+        <div className='cards-item'>
+          <div className='cards-title'>
+            Present Days
+          </div>
+
+          <div className='cards-days'>
+            <p >24</p>
+          </div>
+
+        </div>
+
+        <div className='cards-item'>
+          <div className='cards-title'>
+            Absent Days
+          </div>
+
+          <div className='cards-days'>
+            <p>3</p>
+          </div>
+        </div>
+
+        <div className='cards-item'>
+          <div className='cards-title'>
+            Half Days
+          </div>
+
+          <div className='cards-days'>
+            <p>4</p>
+          </div>
+
+        </div>
+      </div>
+      
       <Footer />
 
     </div>
