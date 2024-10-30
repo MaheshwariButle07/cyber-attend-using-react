@@ -3,10 +3,10 @@ import "./Home.css"
 import Navbar from "./../../components/Navbar/Navbar"
 import toast from 'react-hot-toast'
 import Greeting from '../../components/Greeting/Greeting'
-import holidays from '../../holidayData'
-import Holidays_card from '../../components/Holidays_card/Holidays_card'
-import { Link } from 'react-router-dom'
 import Footer from '../../components/Footer/Footer'
+import celebrationCal from './party.png'
+import holidayCal from './holiday.png'
+import { Link } from 'react-router-dom'
 
 function Home() {
 
@@ -15,9 +15,9 @@ function Home() {
   const [position, setPosition] = useState(null)
   const [isInArea, setIsInArea] = useState(false)
 
-  const location = { lat : 21.164201,lon : 79.082129};
+  const location = { lat: 21.164201, lon: 79.082129 };
 
-  const getDistance = (lat1,lat2,lon1,lon2)=>{
+  const getDistance = (lat1, lat2, lon1, lon2) => {
     const R = 6371e3; // Earth's radius in meters
 
     //convertin lat & lan from degree to radian 
@@ -56,6 +56,7 @@ function Home() {
   })
 
   useEffect(() => {
+
     if (position) {
       const distance = getDistance(position.lat, location.lat, position.lon, location.lon)
 
@@ -67,6 +68,7 @@ function Home() {
         toast.error("You are out of area")
       }
     }
+
   }, [position])
 
   //code for timer
@@ -76,7 +78,7 @@ function Home() {
 
     return savedTime ? JSON.parse(savedTime) : { hours: 0, minutes: 0, seconds: 0 }
   })
-  const [isActive,setIsActive] = useState(false)
+  const [isActive, setIsActive] = useState(false)
   const hours = time.hours.toString().padStart(2, "0");
   const minutes = time.minutes.toString().padStart(2, "0");
 
@@ -122,20 +124,11 @@ function Home() {
     if (isInArea) {
       setIsActive(!isActive)
     }
-    else{
+    else {
       setIsActive(false)
       toast.error("you are out of range")
     }
   }
-
-  const [limit, setLimit] = useState(4)
-  const viewAll = () => {
-    if (limit < holidays.length) {
-      setLimit(limit + 1);
-    }
-  };
-
-  
 
 
 
@@ -174,60 +167,87 @@ function Home() {
         </button>
 
       </div>
-      <br/>
-      <hr/> <hr/>
+    
+      <br/> <br/>
+
 
       <div>
-        <div className='holiday_heading_container'>
-      <h1 className='holiday_title'>Holidays</h1>
-      <Link  to="./holidays" className='view_all' onClick={viewAll}>View All</Link>
-      </div>
-      <hr/> <hr/>
-
-      <div className='holiday_container'>
-     
-
-        {
-          holidays.slice(0,limit).map((leave, id) => {
-            const {
-              month,
-              date,
-              day,
-              holidays_name
-            } = leave
-
-            return (
-              <Holidays_card
-                id={id}
-                month={month}
-                date={date}
-                day={day}
-                holidays_name={holidays_name}
-
-              />
-            )
-          })
-        }
-      </div>
-      </div>
-
-      <br/>
-      <hr/> <hr/>
-
-<div>
-      <div className='celebration_heading_container'>
-      <h1 className='holiday_title'>Celebrations🎂🎁 </h1>
-      <Link  to="./holidays" className='view_all' onClick={viewAll}>View All</Link>
-
-      </div>
-      <hr/> <hr/>
-     
-   
+        <h1 className='home-page-heading'>Events :</h1>
       </div>
 
 
+      <div className='home-card-container'>
+        <div className='home-card-container-item'>
+          <div>
+            <h3>Celebrations</h3>
+          </div>
+          <img src={celebrationCal} alt='celerbation' className='home-card-img' />
 
-      <Footer/>
+          <button className='btn-view-all'>View All</button>
+        </div>
+
+
+        <div className='home-card-container-item'>
+          <div>
+            <h3>Holidays</h3>
+          </div>
+          <img src={holidayCal} alt='holidays' className='home-card-img' />
+
+          <button className='btn-view-all'>View All</button>
+        </div>
+
+      </div>
+<br/> <br/>
+
+      <div>
+        <h1 className='home-page-heading'>Overview :</h1>
+      </div>
+
+      <div className='cards_container'>
+        <div className='cards-item'>
+          <div className='cards-title'>
+            Total Days
+          </div>
+
+          <div className='cards-days'>
+            <p >31</p>
+          </div>
+        </div>
+
+        <div className='cards-item'>
+          <div className='cards-title'>
+            Present Days
+          </div>
+
+          <div className='cards-days'>
+            <p >24</p>
+          </div>
+
+        </div>
+
+        <div className='cards-item'>
+          <div className='cards-title'>
+            Absent Days
+          </div>
+
+          <div className='cards-days'>
+            <p>3</p>
+          </div>
+        </div>
+
+        <div className='cards-item'>
+          <div className='cards-title'>
+            Half Days
+          </div>
+
+          <div className='cards-days'>
+            <p>4</p>
+          </div>
+
+        </div>
+      </div>
+      
+      <Footer />
 
     </div>
   )

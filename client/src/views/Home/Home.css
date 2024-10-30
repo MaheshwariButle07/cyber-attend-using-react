@@ -65,43 +65,89 @@
     color: white;
 }
 
-.holiday_heading_container{
+.home-card-container {
     display: flex;
-    align-items: center;
-    padding-right:10px;
- 
- 
-}
-
-.holiday_container {
-    display: flex;
-    justify-content: space-around;
-    margin: 30px;
+    justify-content: space-evenly;
+    margin: 10px auto;
     flex-wrap: wrap;
 
 }
 
-.holiday_title {
-   color: #5b6658;
-    width: 30%;
-    margin: 10px auto;
-    text-align: center;
-
-}
-
-.view_all{
+.home-card-container-item {
+    width: 180px;
+    border: 3px double #666633;
+    padding: 10px;
+    border-radius: 10px;
     font-size: 20px;
+    background-color: #e5e5cc;
 }
 
-.celebration_heading_container{
+.home-card-img {
+    height: 110px;
+    display: block;
+    justify-content: center;
+    margin-left: 34px;
+
+}
+
+.home-card-container-item h3 {
+    display: block;
+    text-align: center;
+    color: #006a78;
+    font-size: 28px;
+}
+
+.btn-view-all {
+    display: block;
+    margin: 12px auto;
+    color: white;
+    font-size: 15px;
+    border: none;
+    background-color: #07363c;
+    border-radius: 10px;
+    padding: 4px 10px;
+    box-shadow: 1px 1px 1px 1px black;
+
+
+}
+
+.btn-view-all:hover {
+
+    color: white;
+    box-shadow: 1px 1px 1px 1px black;
+    width: 75px;
+}
+
+.home-page-heading {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 10px;
+}
+
+.cards_container {
     display: flex;
-    align-items: center;
-    padding-right:10px;
-  
- 
+    justify-content: space-around;
+    margin: 10px auto;
+    flex-wrap: wrap;
+
 }
 
-.celebration_img{
-    height: 800px;
-    width: 100%;
+.cards-item {
+    width: 150px;
+    border: 3px double #666633;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #e5e5cc;
+}
+
+.cards-title {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cards-days p {
+    display: block;
+    text-align: center;
+    margin: 8px;
 }
