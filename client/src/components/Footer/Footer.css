@@ -16,8 +16,6 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    position: absolute;
-    width: 99%;
 
 }
 
@@ -58,8 +56,9 @@
 
 
 @media screen and (max-width:600px) {
-    .footer-list-container, .footer-social-container{
-        display: none;
-    }
+   .footer{
+    display: none;
+   }
+
 
 }

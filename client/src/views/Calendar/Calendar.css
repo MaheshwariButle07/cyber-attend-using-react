@@ -59,40 +59,19 @@
 }
 
 .today {
-  background-color: #f5784b;
+  background-color: #abab97;
   border-radius: 5px;
   text-align: center;
   font-weight: bold;
 }
 
 .selected {
-  border: 2px solid blue;
-}
-
-.status-p {
-  background-color: lightgreen;
-  /* present */
-}
-
-.status-a {
-  background-color: lightcoral;
-  /* absent */
-}
-
-.status-f {
-  background-color: lightgray;
-  /* future */
-}
-
-.status-prev-absent {
-  border: 2px solid red;
-  /* Highlight previous day's absence */
+  border: 2px solid #666633;
 }
 
 .empty-day {
   background-color: transparent;
 }
-
 
 .cards_container {
   display: flex;
@@ -123,10 +102,33 @@
   margin: 8px;
 }
 
+.day.present {
+  background-color: green;
+  color: white;
+}
 
-@media screen and (max-width:1000px) {
-  .calander {
-    width: 80%;
+.day.absent {
+  background-color: red;
+  color: white;
+}
+
+.day.half-day {
+  background-color: yellow;
+  color: black;
+}
+
+.empty-day {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+
+
+@media screen and (max-width:600px) {
+  .calendar {
+    width: 90%;
+    margin: 10px auto;
   }
 
   .header {
@@ -136,5 +138,18 @@
 
   .header button {
     font-size: 30px;
+  }
+
+  
+.cards_container {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+  .cards-item{
+    width: 39%;
+    margin: 10px;
+    font-size: 28px;
   }
 }

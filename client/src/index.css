@@ -14,7 +14,6 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 1px 1px;
     margin-top: 80px;
-    backdrop-filter: blur(10px);
     background-color: transparent;
 }
 
@@ -27,10 +26,10 @@ body {
 }
 
 .user-input {
-    padding: 4px 4px;
-    width: 60%;
+    padding: 4px;
+    width: 80%;
     margin-left: 20px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .user-input:focus,
@@ -75,4 +74,10 @@ body {
     margin: 0;
     padding: 0;
     font-size: 60px;
+}
+
+@media screen and (max-width:600px) {
+    .auth-form{
+        width: 80%;
+    }
 }

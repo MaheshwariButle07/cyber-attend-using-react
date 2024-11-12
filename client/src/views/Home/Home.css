@@ -20,7 +20,6 @@
     left: 8px;
     font-size: medium;
     font-weight: 600;
-
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
@@ -125,19 +124,19 @@
 
 .cards_container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin: 10px auto;
     flex-wrap: wrap;
-
 }
 
-.cards-item {
+.home-cards-item {
     width: 150px;
     border: 3px double #666633;
     padding: 10px;
     border-radius: 10px;
     font-size: 20px;
     background-color: #e5e5cc;
+
 }
 
 .cards-title {
@@ -150,4 +149,25 @@
     display: block;
     text-align: center;
     margin: 8px;
+}
+
+@media screen and (max-width:600px) {
+    .clock-container {
+        width: 80%;
+    }
+
+    .home-card-container-item {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .home-cards-item {
+    width:39%;
+    margin: 10px;
+    font-size: 28px;
+    }
 }

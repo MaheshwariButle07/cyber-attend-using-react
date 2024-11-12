@@ -35,8 +35,6 @@ function Navbar() {
     if (currentUser) {
       setUser(currentUser);
     }
-
-    console.log(currentUser);
   }, []);
 
   return (

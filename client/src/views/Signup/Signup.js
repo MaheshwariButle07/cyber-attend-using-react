@@ -67,11 +67,11 @@ function SignUp() {
 
 
         <p className="auth-form-heading">
-          Enter Username:
+          Enter Username:<br/>
           <input
             type=" text"
             placeholder="fullName"
-            className="user-input"
+            className="user-input input-username"
             value={user.fullName}
             onChange={(e) => {
               setUser({ ...user, fullName: e.target.value });
@@ -80,7 +80,7 @@ function SignUp() {
         </p>
 
         <p className="auth-form-heading ">
-          Enter email:
+          Enter email:<br/>
           <input
             type="email"
             id="email"
@@ -94,7 +94,7 @@ function SignUp() {
         </p>
 
         <p className="auth-form-heading">
-          Enter password:
+          Enter password:<br/>
           <input
             type="password"
             id="password"
@@ -108,7 +108,7 @@ function SignUp() {
         </p>
 
         <p className="auth-form-heading">
-          Enter dob:
+          Enter dob:<br/>
           <input
             type="date"
             id="dob"
@@ -122,7 +122,7 @@ function SignUp() {
         </p>
 
         <p className="auth-form-heading">
-          Enter joining date:
+          Enter joining date:<br/>
           <input
             type="date"
             id="joining"
@@ -136,7 +136,7 @@ function SignUp() {
         </p>
 
         <p className="auth-form-heading">
-          Enter experience:
+          Enter experience:<br/>
           <input
             type="text"
             id="experience"
@@ -150,7 +150,7 @@ function SignUp() {
         </p>
 
         <p className="auth-form-heading">
-          Enter position:
+          Enter position:<br/>
           <input
             type="text"
             id="poition"
@@ -164,7 +164,7 @@ function SignUp() {
         </p>
 
         <p className="auth-form-heading">
-          Upload a profile:
+          Upload a profile:<br/>
           <input
             type="file"
             id="profile"

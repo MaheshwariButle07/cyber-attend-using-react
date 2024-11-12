@@ -51,7 +51,7 @@ function Login() {
           <h1 className="auth-heading">Login Form </h1>
         </div>
         <label htmlFor="email" className="auth-form-heading">
-          Enter email:
+          Enter email:<br/>
         </label>
         <input
           type="email"
@@ -64,8 +64,10 @@ function Login() {
           }}
         />
 
+            <br/><br/>
+
         <label htmlFor="password" className="auth-form-heading">
-          Enter password:
+          Enter password:<br/>
         </label>
         <input
           type="password"

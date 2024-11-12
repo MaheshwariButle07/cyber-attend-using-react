@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(cors())
 
 
-import { postSignUp,postLogin } from "./controllers/user.js"
+import { postSignUp,postLogin, postSavedAttendance, allOveeAttendance, getAttendance} from "./controllers/user.js"
 
 
 
@@ -30,6 +30,13 @@ app.get("/", (req, res) => {
 
 app.post('/signup', postSignUp);
 app.post("/login", postLogin)
+
+app.post('/attendance', postSavedAttendance);
+app.get('/getattendance', getAttendance);
+app.get('/allOveeAttendance', allOveeAttendance);
+
+
+
 
 
 
