@@ -206,14 +206,12 @@ function Home() {
 
   useEffect(() => {
     const fetchAttendanceData = async () => {
-      try {
+   
 
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/allOverAttendance`);
         setAttendanceData(response.data); // Set the fetched data
 
-      } catch (err) {
-        console.log(err.message); // Set error if any
-      }
+       
     };
 
     fetchAttendanceData();
