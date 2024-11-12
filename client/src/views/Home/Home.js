@@ -212,8 +212,7 @@ function Home() {
         setAttendanceData(response.data); // Set the fetched data
 
       } catch (err) {
-        setError(err.message); // Set error if any
-
+        console.log(err.message); // Set error if any
       }
     };
 
