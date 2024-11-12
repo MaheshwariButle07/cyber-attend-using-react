@@ -84,7 +84,6 @@ function Home() {
   // Get stored date of last timer reset from localStorage
   const [lastResetDate, setLastResetDate] = useState(() => {
     const savedDate = localStorage.getItem("lastResetDate");
-    console.log(savedDate)
     return savedDate ? new Date(savedDate) : new Date();
 
   });
@@ -209,7 +208,7 @@ function Home() {
     const fetchAttendanceData = async () => {
       try {
 
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/allOveeAttendance`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/allOverAttendance`);
         setAttendanceData(response.data); // Set the fetched data
 
       } catch (err) {
