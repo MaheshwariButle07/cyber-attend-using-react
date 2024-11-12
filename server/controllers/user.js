@@ -160,7 +160,7 @@ const getAttendance = async (req, res) => {
   }
 }
 
-const allOveeAttendance = async (req, res) => {
+const allOverAttendance = async (req, res) => {
   try {
     const results = await Attendance.aggregate([
       {
@@ -187,4 +187,4 @@ const allOveeAttendance = async (req, res) => {
 };
 
 
-export { postSignUp, postLogin, postSavedAttendance, allOveeAttendance,getAttendance }
+export { postSignUp, postLogin, postSavedAttendance, allOverAttendance,getAttendance }

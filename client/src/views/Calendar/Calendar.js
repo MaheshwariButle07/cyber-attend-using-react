@@ -107,7 +107,7 @@ function Calendar() {
     return <div>Error: {error}</div>;
   }
 
-  
+
   return (
     <>
       <Navbar />
