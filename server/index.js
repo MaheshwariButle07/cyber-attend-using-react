@@ -32,13 +32,8 @@ app.post('/signup', postSignUp);
 app.post("/login", postLogin)
 
 app.post('/attendance', postSavedAttendance);
-app.get('/getattendance', getAttendance);
-app.get('/allOverAttendance', allOverAttendance);
-
-
-
-
-
+app.get('/getattendance/:userId', getAttendance);
+app.get('/allOverAttendance/:userId', allOverAttendance);
 
 const PORT = process.env.PORT || 8000;
 

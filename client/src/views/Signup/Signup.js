@@ -50,6 +50,8 @@ function SignUp() {
     } else {
       toast.error(response.data.success);
     }
+
+    console.log(response)
   };
 
   return (

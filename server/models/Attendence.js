@@ -2,8 +2,8 @@ import { Schema, model, } from "mongoose";
 
 const attendanceSchema = new Schema({
   userId:{ type:Schema.Types.ObjectId, ref: 'User', required: true},
-    status: { type: String, required: true },
-    date:{type:Date, default:Date.now}
+  status: { type: String, required: true },
+  date:{type:Date, default:Date.now}
 }
   ,
   {

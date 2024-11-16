@@ -9,8 +9,7 @@ import holidayCal from './holiday.png'
 import axios from 'axios'
 
 function Home() {
-
-  //code for location
+  // code for location
 
   const [position, setPosition] = useState(null)
   const [isInArea, setIsInArea] = useState(false)
@@ -20,17 +19,17 @@ function Home() {
   const getDistance = (lat1, lat2, lon1, lon2) => {
     const R = 6371e3; // Earth's radius in meters
 
-    //convertin lat & lan from degree to radian 
+    // Convert lat & lon from degree to radian 
     const lat1Radian = lat1 * Math.PI / 180
     const lat2Radian = lat2 * Math.PI / 180
     const lon1Radian = lon1 * Math.PI / 180
     const lon2Radian = lon2 * Math.PI / 180
 
-    //finding difference between 2 lat & lon
+    // Finding difference between 2 lat & lon
     const DLat = lat2Radian - lat1Radian
     const DLon = lon2Radian - lon1Radian
 
-    //approximate distance 
+    // Approximate distance 
     const approxDLon = DLon * R * Math.cos((lat1Radian + lat2Radian) / 2)
     const approxDLat = DLat * R
 
@@ -44,32 +43,31 @@ function Home() {
     }
 
     const error = (error) => {
-      toast.error("error getting location", error)
+      toast.error("Error getting location", error)
     }
 
     const watchUserLocation = navigator.geolocation.watchPosition(userLocation, error, { enableHighAccuracy: true, timeout: 20000 })
 
-
     return () => {
       navigator.geolocation.clearWatch(watchUserLocation)
     }
-  })
+  }, [])
 
   useEffect(() => {
-
     if (position) {
       const distance = getDistance(position.lat, location.lat, position.lon, location.lon)
-
       if (distance <= 50) {
         setIsInArea(true)
-      }
-      else {
+      } else {
         setIsInArea(false)
         toast.error("You are out of area")
       }
     }
-
   }, [position])
+
+
+
+
 
 
 
@@ -81,14 +79,10 @@ function Home() {
 
   const [isActive, setIsActive] = useState(false);
 
-  // Get stored date of last timer reset from localStorage
   const [lastResetDate, setLastResetDate] = useState(() => {
     const savedDate = localStorage.getItem("lastResetDate");
     return savedDate ? new Date(savedDate) : new Date();
-
   });
-
-
 
   const hours = time.hours.toString().padStart(2, "0");
   const minutes = time.minutes.toString().padStart(2, "0");
@@ -111,13 +105,11 @@ function Home() {
     const todayDate = today.toISOString().split("T")[0]; // Get current date in YYYY-MM-DD format
     const storedDate = lastResetDate.toISOString().split("T")[0]; // Get stored date in YYYY-MM-DD format
 
-    // If the stored date differs from today's date, reset the timer
     if (todayDate !== storedDate) {
       setTime({ hours: 0, minutes: 0, seconds: 0 });
       setLastResetDate(today); // Update the last reset date
     }
 
-    // Timer logic when the timer is active
     if (isActive) {
       interval = setInterval(() => {
         setTime((prevTime) => {
@@ -139,7 +131,7 @@ function Home() {
           }
           return { hours, minutes, seconds };
         });
-      }, 1);
+      }, 1000);
     } else if (!isActive && time.seconds !== 0) {
       clearInterval(interval);
     }
@@ -157,9 +149,13 @@ function Home() {
   };
 
 
-  //ATTENDANCE STATUS
 
-  const [status, setStatus] = useState("");
+
+
+
+  // Attendance Status
+
+  const [status, setStatus] = useState("absent");
 
   const attendence = async () => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
@@ -167,7 +163,6 @@ function Home() {
       toast.error("User not found in localStorage");
       return;
     }
-
     const userId = user._id;
     const timeing = new Date();
     const date = timeing.toISOString().split('T')[0]; // Format date to YYYY-MM-DD
@@ -181,13 +176,11 @@ function Home() {
       setStatus("absent");
     }
 
-    // Call the API to submit attendance
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/attendance`,
-        { userId, status, date }
+        `${process.env.REACT_APP_API_URL}/attendance`,{ userId, status, date }
       );
-      toast.log("Attendance submitted successfully");
+      toast.success("Attendance submitted successfully");
     } catch (error) {
       toast.error("Error submitting attendance:", error);
     }
@@ -195,60 +188,57 @@ function Home() {
 
   useEffect(() => {
     attendence();
-  }, [status]); // Run the attendance function when `status` changes
+  }, [status]); // Run the attendance function when status changes
 
 
 
-  //attendence data
 
-  const [attendanceData, setAttendanceData] = useState([]);
-  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchAttendanceData = async () => {
-      try {
 
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/allOverAttendance`);
-        setAttendanceData(response.data); // Set the fetched data
-
-      } catch (err) {
-        console.log(err.message); // Set error if any
-      }
-    };
-
-    fetchAttendanceData();
-  }, []); // Empty dependency array means it runs once when the component mounts
 
   
+  // Fetch attendance data for the current user
 
+  const [attendanceData,setAttendanceData] = useState([])
+ 
+  useEffect(() => {
+    const fetchAttendanceData = async () => {
+      const user = (JSON.parse(localStorage.getItem("currentUser"))._id);
+            
+      if (!user) {
+        toast.error("User not found in localStorage");
+        return;
+      }
+
+      try {     
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/allOverAttendance/${user}`);
+        setAttendanceData(response.data);
+      } 
+      catch (err) {
+        toast.error("Error fetching attendance data");
+      }
+    }
+    fetchAttendanceData();
+  }, []);
 
 
   return (
     <div>
       <Navbar />
       <Greeting />
-
       <div className='clock-container'>
-
         <div className='current-day'>
-
           <p>{(new Date).toDateString()}</p>
         </div>
-
         <div className='clock-timer'>
           <span className="clock-input">{hours}</span>
-
           <span className='clock-seperater'>:</span>
-
           <span className="clock-input">{minutes}</span>
-
           <span className='clock-unit'>hrs</span>
         </div>
-
         <div>
           <p className='shift-timing'> Shift 9:00 AM - 5:00 PM </p>
         </div>
-
         <button
           type="button"
           className="btn-clock"
@@ -257,110 +247,66 @@ function Home() {
         >
           {isActive ? "Clock-Out" : "Clock-In"}
         </button>
-
       </div>
-
-      <br /> <br />
-
-
+      <br /><br />
       <div>
         <h1 className='home-page-heading'>Events :</h1>
       </div>
-
-
       <div className='home-card-container'>
         <div className='home-card-container-item'>
           <div>
             <h3>Celebrations</h3>
           </div>
           <img src={celebrationCal} alt='celerbation' className='home-card-img' />
-
           <button className='btn-view-all'>View All</button>
         </div>
-
-
         <div className='home-card-container-item'>
           <div>
             <h3>Holidays</h3>
           </div>
           <img src={holidayCal} alt='holidays' className='home-card-img' />
-
           <button className='btn-view-all'>View All</button>
         </div>
-
       </div>
-      <br /> <br />
-
+      <br /><br />
       <div>
         <h1 className='home-page-heading'>Overview :</h1>
       </div>
-
       {attendanceData.length === 0 ? (
         <p>No attendance data available.</p>
       ) : (
-
-        <div>
-          {attendanceData.map((userAttendance) => (
-            <div className='cards_container' key={userAttendance._id}>
+            <div className='cards_container' >
               <div className='home-cards-item'>
-                <div className='cards-title'>
-                  Total Days
-                </div>
-
+                <div className='cards-title'>Total Days</div>
                 <div className='cards-days'>
-                  <p >{userAttendance.totalDays}</p>
+                  <p>{attendanceData.total}</p>
                 </div>
               </div>
-
               <div className='home-cards-item'>
-                <div className='cards-title'>
-                  Present Days
-                </div>
-
+                <div className='cards-title'>Present Days</div>
                 <div className='cards-days'>
-                  <p >{userAttendance.presentDays}</p>
-                </div>
-
-              </div>
-
-              <div className='home-cards-item'>
-                <div className='cards-title'>
-                  Absent Days
-                </div>
-
-                <div className='cards-days'>
-                  <p>{userAttendance.absentDays}</p>
+                  <p>{attendanceData.present}</p>
                 </div>
               </div>
-
               <div className='home-cards-item'>
-                <div className='cards-title'>
-                  Half Days
-                </div>
-
+                <div className='cards-title'>Absent Days</div>
                 <div className='cards-days'>
-                  <p>{userAttendance.halfDays}</p>
+                  <p>{attendanceData.absent}</p>
                 </div>
-
-
-
+              </div>
+              <div className='home-cards-item'>
+                <div className='cards-title'>Half Days</div>
+                <div className='cards-days'>
+                  <p>{attendanceData.halfday}</p>
+                </div>
               </div>
             </div>
-
-          ))}
-        </div>
-
-      )}
-
+        )
+       }
       <Footer />
       <Toaster />
-
     </div>
-  )
+  );
 }
 
-export default Home
-
-
-
-
+export default Home;
