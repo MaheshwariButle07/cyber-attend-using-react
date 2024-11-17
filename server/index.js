@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 });
 
 app.post('/signup', postSignUp);
-app.post("/login", postLogin)
+app.post('/login', postLogin)
 
 app.post('/attendance', postSavedAttendance);
 app.get('/allOverAttendance/:userId', allOverAttendance);
