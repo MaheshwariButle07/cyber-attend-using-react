@@ -6,7 +6,7 @@ import Greeting from '../../components/Greeting/Greeting'
 import Footer from '../../components/Footer/Footer'
 import celebrationCal from './party.png'
 import holidayCal from './holiday.png'
-import { Link } from 'react-router-dom'
+
 
 function Home() {
 
