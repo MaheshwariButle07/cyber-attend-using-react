@@ -1,42 +1,43 @@
-*{
+* {
     text-decoration: none;
     margin: 0;
 }
 
-.nav-bar-container{
+.nav-bar-container {
     background-color: #07363c;
-    padding:10px; 
+    padding: 10px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 
-.logo{
+.logo {
     height: 65px;
     width: 65px;
     border-radius: 50%;
     border: #e4c19d 2px solid;
 }
 
-.profile-container{
+.profile-container {
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    
+
 }
 
 
-.profile-image{
+.profile-image {
     height: 50px;
     width: 50px;
-    object-fit:cover;
+    object-fit: cover;
     border-radius: 50%;
 
 }
 
-.user-name{
+.user-name {
     margin: 0;
     padding: 0;
     font-size: 16px;
@@ -44,19 +45,19 @@
 
 }
 
-.list-container{
+.list-container {
     display: flex;
 }
 
-.list{
+.list {
     margin: 10px 20px;
     font-size: 22px;
     cursor: pointer;
     color: #e4c19d;
-    text-decoration: none;   
+    text-decoration: none;
 }
 
-.logout-btn{
+.logout-btn {
     position: fixed;
     right: 10px;
     font-size: 25px;
@@ -64,62 +65,61 @@
     padding: 5px 30px;
 }
 
-.L-btn{
+.L-btn {
     display: flex;
     align-items: center;
     margin: 0;
     padding: 0;
-    
+
 }
 
-.mobile-menu-container{
+.mobile-menu-container {
     display: none;
 }
 
-.item-logo{
+.item-logo {
     height: 80px;
     padding: 0 20px;
-   
-    
+
+
 }
 
 
-@media screen and (max-width: 600px){
-    .nav-bar-container{
-        padding:50px;
-    }
-    
-
-    .profile-image{
-        height: 100px;
-        width: 100px;
+@media screen and (max-width: 600px) {
+    .nav-bar-container {
+        padding: 20px 5px;
+        justify-content: space-evenly;
     }
 
-    .user-name{
-        font-weight: bold;
-        font-size: 40px;
-        text-align: center;
-    }
-
-    .list-container{
+    .list-container {
         display: none;
     }
 
-    .mobile-menu-container{
+    .mobile-menu-container {
+        display: flex;
+        padding: 0;
         display: flex;
         align-items: center;
+
+    }
+
+    .item-logo {
+        height: 40px;
+        padding: 0 10px;
+    }
+
+    .logo {
+        height: 45px;
+        width: 45px;
+    }
+    
+    .list {
+        margin: 5px 0px;
         
     }
 
-    
-.profile-image{
-    height: 100px;
-    width: 100px;
-}
 
 
-
-    
 }
 
 

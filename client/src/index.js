@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Home from './views/Home/Home';
-import Login from './views/Login/Login';
+import Login from './views/Login/Login.js';
 import Signup from './views/Signup/Signup';
 // import Holiday from './views/Holiday/Holiday';
 import Calendar from './views/Calendar/Calendar';
