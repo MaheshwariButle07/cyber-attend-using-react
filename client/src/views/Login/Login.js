@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import './Login.css'
 import { Link } from "react-router-dom";
-import toast, { CheckmarkIcon, Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import axios from "axios"
 import "./../../index.css"
 import Navbar from "../../components/Navbar/Navbar";
-import logoImg from "../../components/Navbar/logo.png"
+import logoImg from "../../components/Navbar/icons/logo.png"
 
 function Login() {
 
