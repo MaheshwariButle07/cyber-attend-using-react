@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(cors())
 
 
-import { postSignUp,postLogin, postSavedAttendance, allOverAttendance} from "./controllers/user.js"
+import { postSignUp,postLogin, postSavedAttendance, allOverAttendance, getAttendance} from "./controllers/user.js"
 
 
 
@@ -33,6 +33,8 @@ app.post('/login', postLogin)
 
 app.post('/attendance', postSavedAttendance);
 app.get('/allOverAttendance/:userId', allOverAttendance);
+
+app.get('/getAttendance/:userId',getAttendance)
 
 const PORT = process.env.PORT || 8000;
 

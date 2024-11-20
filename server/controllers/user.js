@@ -138,7 +138,7 @@ const allOverAttendance = async (req, res) => {
         case 'absent':
           absent++;
           break;
-        case 'halfday':
+        case 'half-day':
           halfday++;
           break;
         default:
@@ -163,4 +163,23 @@ const allOverAttendance = async (req, res) => {
 
 }
 
-export { postSignUp, postLogin, postSavedAttendance, allOverAttendance }
+const getAttendance = async (req, res) => {
+  try {
+    const { userId } = req.params;
+
+    // Fetch attendance records for the specific user
+    const attendanceRecords = await Attendance.find({ userId }).sort({ date: -1 }); // Sort by date descending
+
+    if (!attendanceRecords) {
+      return res.status(404).json({ message: 'No attendance records found' });
+    }
+
+    // Respond with the attendance data
+    res.json(attendanceRecords);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+export { postSignUp, postLogin, postSavedAttendance, allOverAttendance, getAttendance }
