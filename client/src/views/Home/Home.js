@@ -223,6 +223,9 @@ function Home() {
     fetchAttendanceData();
   }, []);
 
+  const birthdays = ()=>{
+    window.location.href = '/Celebration'
+  }
 
   return (
     <div>
@@ -251,6 +254,7 @@ function Home() {
         </button>
       </div>
       <br /><br />
+
       <div>
         <h1 className='home-page-heading'>Events :</h1>
       </div>
@@ -260,8 +264,14 @@ function Home() {
             <h3>Celebrations</h3>
           </div>
           <img src={celebrationCal} alt='celerbation' className='home-card-img' />
-          <button className='btn-view-all'>View All</button>
+          <button 
+          className='btn-view-all'
+          onClick={birthdays}
+          >
+            View All
+          </button>
         </div>
+
         <div className='home-card-container-item'>
           <div>
             <h3>Holidays</h3>
@@ -271,6 +281,7 @@ function Home() {
         </div>
       </div>
       <br /><br />
+
       <div>
         <h1 className='home-page-heading'>Overview :</h1>
       </div>
@@ -305,6 +316,7 @@ function Home() {
             </div>
         )
        }
+       
       <Footer />
       <Toaster />
     </div>
