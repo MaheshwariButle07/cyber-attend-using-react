@@ -5,7 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import "./../../index.css";
 import Navbar from "../../components/Navbar/Navbar";
-import logoImg from "./../../components/Navbar/logo.png";
+import logoImg from "./../../components/Navbar/icons/logo.png";
 
 function SignUp() {
   const [user, setUser] = useState({
