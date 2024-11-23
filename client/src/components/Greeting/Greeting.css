@@ -17,3 +17,9 @@
         opacity: 0;
     }
 }
+
+@media screen and (max-width:600px) {
+    .greeting{
+        font-size: 18px;
+    }
+}
