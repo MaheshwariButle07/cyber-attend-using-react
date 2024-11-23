@@ -166,11 +166,8 @@ const allOverAttendance = async (req, res) => {
 
 
 const fetchData = async (req, res) => {
-  const { userId } = req.params;
 
-  // const user = await FetchData.findById(userId)
-
-  const user = userId._id;
+  const user = await User.find();
   if (user) {
     
     return res.json({
@@ -186,7 +183,7 @@ const fetchData = async (req, res) => {
       data: null
     })
   }
-console.log(userId)
+
 }
 
 

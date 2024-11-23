@@ -37,7 +37,7 @@ app.post('/login', postLogin)
 
 app.post('/attendance', postSavedAttendance);
 app.get('/allOverAttendance/:userId', allOverAttendance);
-app.get('/fetchData/:userId',fetchData)
+app.get('/fetchData',fetchData)
 
 app.get('/getAttendance/:userId',getAttendance)
 

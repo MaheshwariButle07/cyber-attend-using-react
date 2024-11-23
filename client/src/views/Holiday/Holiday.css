@@ -1,0 +1,22 @@
+.holiday-title {
+    text-align: center;
+    font-size: 35px;
+    margin-top: 4px;
+   
+}
+
+.holiday-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    flex-wrap: wrap;
+
+}
+
+
+@media screen and (max-width:600px) {
+    .holiday-title {
+        font-size: 28px;
+
+    }
+}
