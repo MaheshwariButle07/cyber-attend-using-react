@@ -35,6 +35,8 @@ function Celebration() {
         <>
             <NavBar />
             <h1 className='title'>Your Special Day & Profile Overview</h1>
+
+            <p className='note'>Note : Touch for more information</p>
             <div className='total-container'>
                 {userData.map((userDetails) => {
                     return (

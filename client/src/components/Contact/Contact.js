@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import './Contact.css'
+import logoImg from "../../components/Navbar/icons/logo.png"
 import { toast, Toaster } from 'react-hot-toast';
 
 function Contact() {
@@ -44,23 +45,35 @@ function Contact() {
 
     return (
         <div className='form-main-container'>
+
             <h1 className='form-heading'>
-                Time Off Request :
+                Leave Application Request :
             </h1>
 
             <div className='form-container'>
                 <form ref={form} onSubmit={sendEmail}>
-                    <label className='field-title'>Your Name:</label>
-                    <input type="text" name="user_name" className='fields' />
+                <div className="auth-heading-container">
+          <img className="logo" src={logoImg} alt="logo-img" />
+         
+         <p className="auth-headind-sepretor">|</p>
 
-                    <label className='field-title'>Your Email:</label>
-                    <input type="email" name="user_email" className='fields' />
+          <h1 className="auth-heading">Leave Form</h1>
+        </div>
+                    <input type="text"
+                    placeholder='Your Name'
+                     name="user_name" className='fields' />
 
-                    <label className='field-title'>Subject:</label>
-                    <input type="text" name="user_subject" className='fields subject' />
+                    <input type="email" 
+                    placeholder='Your Email'
+                    name="user_email" className='fields' />
 
-                    <label className='field-title'>Message:</label>
-                    <textarea name="message" className='fields message' />
+                    <input type="text" 
+                    placeholder='Subject'
+                    name="user_subject" className='fields subject' />
+
+                    <textarea name="message" 
+                    placeholder='Message'
+                    className='fields message' />
 
                     <div className='btn-container'>
                         <button type='submit' value='send' className='btn-send'>Send</button>

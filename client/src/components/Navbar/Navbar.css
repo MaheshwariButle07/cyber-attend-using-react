@@ -42,7 +42,6 @@
     padding: 0;
     font-size: 16px;
     color: #e4c19d;
-
 }
 
 .list-container {
@@ -87,7 +86,7 @@
 
 @media screen and (max-width: 600px) {
     .nav-bar-container {
-        padding: 20px 5px;
+        padding: 0px 5px;
         justify-content: space-evenly;
     }
 
@@ -104,28 +103,29 @@
     }
 
     .item-logo {
-        height: 40px;
-        padding: 0 10px;
+        height: 35px;
+        padding:15px;
     }
 
     .logo {
-        height: 45px;
-        width: 45px;
+        height: 35px;
+        width: 35px;
     }
     
     .list {
-        margin: 5px 0px;
-        
+        margin: 5px 0px;    
     }
+
+    .user-name {
+        font-size:6px;
+    }
+
+    .profile-image{
+    height: 35px;
+    width: 35px;
+    }
+    
 
 
 
 }
-
-
-/* 
-#07363c
-#05505a
-#8c9484
-#e4c19d
- */
