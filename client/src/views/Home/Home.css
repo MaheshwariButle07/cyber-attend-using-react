@@ -10,7 +10,7 @@
     border-radius: 10px;
     position: relative;
     background-color: rgb(255, 254, 254);
-    /* background-color: white; */
+   
 
 }
 
@@ -92,7 +92,7 @@
 .home-card-container-item h3 {
     display: block;
     text-align: center;
-    color: #006a78;
+    color:#07363c;
     font-size: 28px;
 }
 
@@ -149,15 +149,21 @@
     display: block;
     text-align: center;
     margin: 8px;
-}
+}   
 
 @media screen and (max-width:600px) {
     .clock-container {
         width: 80%;
     }
 
-    .home-card-container-item {
-        width: 80%;
+    .home-page-heading {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        margin-left: 10px;
+        font-size: 26px;
+    }
+
+     .home-card-container-item {
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -165,9 +171,20 @@
         margin: 10px;
     }
 
+     
+
+    .home-card-container-item h3{
+        font-size: 26px;
+    }
+
+    .home-card-img{
+        height: 80px;
+        margin-left: 10px; 
+    } 
+
     .home-cards-item {
-    width:39%;
+    width:30%;
     margin: 10px;
-    font-size: 28px;
+    font-size: 20px;
     }
 }

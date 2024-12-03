@@ -59,6 +59,7 @@
 }
 
 .today {
+  background-color: green;
   background-color: #abab97;
   border-radius: 5px;
   text-align: center;

@@ -6,6 +6,9 @@ import Greeting from '../../components/Greeting/Greeting'
 import Footer from '../../components/Footer/Footer'
 import celebrationCal from './party.png'
 import holidayCal from './holiday.png'
+import Contact from '../../components/Contact/Contact'
+
+
 import axios from 'axios'
 
 function Home() {
@@ -178,7 +181,7 @@ function Home() {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/attendance`,{ userId, status, date }
+        `${process.env.REACT_APP_API_URL}/attendance`, { userId, status, date }
       );
       toast.success("Attendance submitted successfully");
     } catch (error) {
@@ -196,24 +199,24 @@ function Home() {
 
 
 
-  
+
   // Fetch attendance data for the current user
 
-  const [attendanceData,setAttendanceData] = useState([])
- 
+  const [attendanceData, setAttendanceData] = useState([])
+
   useEffect(() => {
     const fetchAttendanceData = async () => {
       const user = (JSON.parse(localStorage.getItem("currentUser"))._id);
-            
+
       if (!user) {
         toast.error("User not found in localStorage");
         return;
       }
 
-      try {     
+      try {
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/allOverAttendance/${user}`);
         setAttendanceData(response.data);
-      } 
+      }
       catch (err) {
         toast.error("Error fetching attendance data");
       }
@@ -221,6 +224,13 @@ function Home() {
     fetchAttendanceData();
   }, []);
 
+  const birthdays = () => {
+    window.location.href = '/Celebration'
+  }
+
+  const holidays = () => {
+    window.location.href = '/Holiday'
+  }
 
   return (
     <div>
@@ -249,6 +259,7 @@ function Home() {
         </button>
       </div>
       <br /><br />
+
       <div>
         <h1 className='home-page-heading'>Events :</h1>
       </div>
@@ -258,51 +269,65 @@ function Home() {
             <h3>Celebrations</h3>
           </div>
           <img src={celebrationCal} alt='celerbation' className='home-card-img' />
-          <button className='btn-view-all'>View All</button>
+          <button
+            className='btn-view-all'
+            onClick={birthdays}
+          >
+            View All
+          </button>
         </div>
+
         <div className='home-card-container-item'>
           <div>
             <h3>Holidays</h3>
           </div>
           <img src={holidayCal} alt='holidays' className='home-card-img' />
-          <button className='btn-view-all'>View All</button>
+          <button
+            className='btn-view-all'
+            onClick={holidays}
+          >
+            View All
+          </button>
         </div>
       </div>
       <br /><br />
+
       <div>
         <h1 className='home-page-heading'>Overview :</h1>
       </div>
       {attendanceData.length === 0 ? (
         <p>No attendance data available.</p>
       ) : (
-            <div className='cards_container' >
-              <div className='home-cards-item'>
-                <div className='cards-title'>Total Days</div>
-                <div className='cards-days'>
-                  <p>{attendanceData.total}</p>
-                </div>
-              </div>
-              <div className='home-cards-item'>
-                <div className='cards-title'>Present Days</div>
-                <div className='cards-days'>
-                  <p>{attendanceData.present}</p>
-                </div>
-              </div>
-              <div className='home-cards-item'>
-                <div className='cards-title'>Absent Days</div>
-                <div className='cards-days'>
-                  <p>{attendanceData.absent}</p>
-                </div>
-              </div>
-              <div className='home-cards-item'>
-                <div className='cards-title'>Half Days</div>
-                <div className='cards-days'>
-                  <p>{attendanceData.halfday}</p>
-                </div>
-              </div>
+        <div className='cards_container' >
+          <div className='home-cards-item'>
+            <div className='cards-title'>Total Days</div>
+            <div className='cards-days'>
+              <p>{attendanceData.total}</p>
             </div>
-        )
-       }
+          </div>
+          <div className='home-cards-item'>
+            <div className='cards-title'>Present Days</div>
+            <div className='cards-days'>
+              <p>{attendanceData.present}</p>
+            </div>
+          </div>
+          <div className='home-cards-item'>
+            <div className='cards-title'>Absent Days</div>
+            <div className='cards-days'>
+              <p>{attendanceData.absent}</p>
+            </div>
+          </div>
+          <div className='home-cards-item'>
+            <div className='cards-title'>Half Days</div>
+            <div className='cards-days'>
+              <p>{attendanceData.halfday}</p>
+            </div>
+          </div>
+        </div>
+      )
+      }
+      <Contact/>
+
       <Footer />
       <Toaster />
     </div>

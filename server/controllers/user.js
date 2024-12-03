@@ -1,5 +1,6 @@
 import User from "../models/User.js";
 import Attendance from "../models/Attendence.js";
+import FetchData from "../models/FetchData.js";
 
 const postSignUp = async (req, res) => {
   const {
@@ -99,7 +100,7 @@ const postSavedAttendance = async (req, res) => {
     }
 
     // Respond with success
-    res.json({ message: 'Attendance recorded successfully'});
+    res.json({ message: 'Attendance recorded successfully' });
   } catch (error) {
     console.error('Error saving attendance record:', error);
     res.json({ error: 'Failed to record attendance' });
@@ -163,6 +164,32 @@ const allOverAttendance = async (req, res) => {
 
 }
 
+
+const fetchData = async (req, res) => {
+
+  const user = await User.find();
+  if (user) {
+    
+    return res.json({
+      success: true,
+      message: "User Found",
+      data: user
+    })
+  }
+  else {
+    return res.json({
+      success: false,
+      message: "User Not Found",
+      data: null
+    })
+  }
+
+}
+
+
+
+
+
 const getAttendance = async (req, res) => {
   try {
     const { userId } = req.params;
@@ -182,4 +209,5 @@ const getAttendance = async (req, res) => {
   }
 };
 
-export { postSignUp, postLogin, postSavedAttendance, allOverAttendance, getAttendance }
+export { postSignUp, postLogin, postSavedAttendance, allOverAttendance, getAttendance,fetchData }
+

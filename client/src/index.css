@@ -30,6 +30,7 @@ body {
     width: 80%;
     margin-left: 20px;
     margin-bottom: 10px;
+    margin-top: 2px;
 }
 
 .user-input:focus,
@@ -78,6 +79,6 @@ body {
 
 @media screen and (max-width:600px) {
     .auth-form{
-        width: 80%;
+        width: 70%;
     }
 }
