@@ -18,7 +18,6 @@ function Holiday() {
                             Day,
                             Holiday
                         } = object
-                        console.log(object)
                         return (
                             <HolidayCard
                                 key={i}
