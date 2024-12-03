@@ -1,0 +1,90 @@
+.form-main-container {
+    margin-top: 50px;
+}
+
+.form-container {
+    width: 380px;
+    display: block;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #e5e5cc;
+    box-shadow: 0 0 2px 2px #5b6658;
+
+}
+
+.form-heading {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 10px;
+}
+
+form {
+    margin-left: 20px;
+    padding: 10px 20px;
+}
+
+.fields {
+    margin: 10px;
+    padding: 7px;
+    width: 80%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+.fields:focus,
+.fields:active {
+    outline: none;
+}
+
+.message {
+    height: 50px;
+
+
+}
+
+.message:focus,
+.message:active {
+    outline: none;
+}
+
+.field-title {
+    font-size: 17px;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn-send {
+    font-size: 18px;
+    border: none;
+    background-color: #5b6658;
+    color: white;
+    border-radius: 10px;
+    padding: 6px 17px;
+    box-shadow: 1px 1px 1px 1px #8c9484;
+    display: block;
+    margin: 10px auto;
+    width: 50%;
+    text-align: center;
+}
+
+.btn-send:hover {
+    background-color: #8c9484;
+    color: white;
+    box-shadow: 1px 1px 1px 1px #343b32;
+
+}
+
+@media screen and (max-width:600px) {
+    .form-container {
+        width: 300px;
+    }
+
+    .form-heading {
+        font-size: 26px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    }
+
+}

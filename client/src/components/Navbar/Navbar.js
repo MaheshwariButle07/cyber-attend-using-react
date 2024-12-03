@@ -43,7 +43,7 @@ function Navbar() {
     <div className="nav-bar-container">
       <img className="logo" src={logoImg} alt="logo-img" />
 
-      {/* Desktop Menu */}
+      {/* Desktop Menu */}    
       <ul type="none" className="list-container">
         <Link to="/">
           <li className="list">Home</li>

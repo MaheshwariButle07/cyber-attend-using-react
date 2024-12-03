@@ -6,6 +6,7 @@ import Greeting from '../../components/Greeting/Greeting'
 import Footer from '../../components/Footer/Footer'
 import celebrationCal from './party.png'
 import holidayCal from './holiday.png'
+import Contact from '../../components/Contact/Contact'
 
 
 import axios from 'axios'
@@ -325,6 +326,7 @@ function Home() {
         </div>
       )
       }
+      <Contact/>
 
       <Footer />
       <Toaster />
