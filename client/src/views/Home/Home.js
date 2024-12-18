@@ -12,12 +12,23 @@ import Contact from '../../components/Contact/Contact'
 import axios from 'axios'
 
 function Home() {
+
+  const user = localStorage.getItem("currentUser")
+  console.log(user._id)
+  if(!user){
+    window.location.href="/login"
+  }
+
   // code for location
+
+  // 21.1643681,79.0796261
 
   const [position, setPosition] = useState(null)
   const [isInArea, setIsInArea] = useState(false)
 
-  const location = { lat: 21.164201, lon: 79.082129 };
+  const location = { lat:21.111658, lon: 79.0985455 };
+
+
 
   const getDistance = (lat1, lat2, lon1, lon2) => {
     const R = 6371e3; // Earth's radius in meters
