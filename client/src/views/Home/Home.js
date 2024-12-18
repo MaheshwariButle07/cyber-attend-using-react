@@ -15,12 +15,10 @@ function Home() {
 
   // code for location
 
-  // 21.1643681,79.0796261
-
   const [position, setPosition] = useState(null)
   const [isInArea, setIsInArea] = useState(false)
 
-  const location = { lat:21.111658, lon: 79.0985455 };
+  const location = { lat:21.1643681, lon: 79.0796261};
 
 
 
