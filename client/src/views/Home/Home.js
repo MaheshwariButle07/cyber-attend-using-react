@@ -13,12 +13,6 @@ import axios from 'axios'
 
 function Home() {
 
-  const user = localStorage.getItem("currentUser")
-  console.log(user._id)
-  if(!user){
-    window.location.href="/login"
-  }
-
   // code for location
 
   // 21.1643681,79.0796261
