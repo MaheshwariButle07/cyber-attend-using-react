@@ -11,7 +11,6 @@ function Celebration() {
     useEffect(() => {
         const fetchUserData = async () => {
             const user = (JSON.parse(localStorage.getItem("currentUser"))._id);
-            console.log(user)
             if (!user) {
                 toast.error("User not found in localStorage");
                 return;
@@ -20,7 +19,6 @@ function Celebration() {
             try {
                 const response = await axios.get(`${process.env.REACT_APP_API_URL}/fetchData`);
                 setUserData(response.data.data);
-                console.log(response.data.data)
             }
             catch (err) {
                 toast.error("Error fetching user details");
@@ -37,6 +35,8 @@ function Celebration() {
         <>
             <NavBar />
             <h1 className='title'>Your Special Day & Profile Overview</h1>
+
+            <p className='note'>Note : Touch for more information</p>
             <div className='total-container'>
                 {userData.map((userDetails) => {
                     return (

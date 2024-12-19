@@ -2,11 +2,6 @@ import React, {useState , useEffect} from "react";
 import "./Footer.css";
 import { Link } from 'react-router-dom'
 import toast from "react-hot-toast";
-import home from "./../Navbar/icons/home.png"
-import calander from "./../Navbar/icons/calander.png"
-import signup from "./../Navbar/icons/signup.png"
-import login from "./../Navbar/icons/login.png"
-import logout from "./../Navbar/icons/logout.png"
 
 
 

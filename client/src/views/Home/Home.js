@@ -12,15 +12,21 @@ import Contact from '../../components/Contact/Contact'
 import axios from 'axios'
 
 function Home() {
+
   // code for location
 
   const [position, setPosition] = useState(null)
   const [isInArea, setIsInArea] = useState(false)
 
+
   const location = {
     lat:
       21.164339, lon: 79.081797
   };
+
+  const location = { lat:21.1643681, lon: 79.0796261};
+
+
 
   const getDistance = (lat1, lat2, lon1, lon2) => {
     const R = 6371e3; // Earth's radius in meters
