@@ -17,9 +17,10 @@ function Home() {
   const [position, setPosition] = useState(null)
   const [isInArea, setIsInArea] = useState(false)
 
-  const location = { lat: 
-    18.629, lon:  
-    73.8084 };
+  const location = {
+    lat:
+      21.164339, lon: 79.081797
+  };
 
   const getDistance = (lat1, lat2, lon1, lon2) => {
     const R = 6371e3; // Earth's radius in meters
@@ -330,7 +331,7 @@ function Home() {
         </div>
       )
       }
-      <Contact/>
+      <Contact />
 
       <Footer />
       <Toaster />
