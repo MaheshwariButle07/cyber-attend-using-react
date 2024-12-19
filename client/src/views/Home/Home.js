@@ -59,7 +59,7 @@ function Home() {
   useEffect(() => {
     if (position) {
       const distance = getDistance(position.lat, location.lat, position.lon, location.lon)
-      if (distance <= 50) {
+      if (distance <= 100) {
         setIsInArea(true)
       } else {
         setIsInArea(false)
