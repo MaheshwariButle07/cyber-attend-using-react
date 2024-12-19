@@ -18,6 +18,12 @@ function Home() {
   const [position, setPosition] = useState(null)
   const [isInArea, setIsInArea] = useState(false)
 
+
+  const location = {
+    lat:
+      21.164339, lon: 79.081797
+  };
+
   const location = { lat:21.1643681, lon: 79.0796261};
 
 
@@ -62,12 +68,14 @@ function Home() {
   useEffect(() => {
     if (position) {
       const distance = getDistance(position.lat, location.lat, position.lon, location.lon)
-      if (distance <= 50) {
+      if (distance <= 100) {
         setIsInArea(true)
       } else {
         setIsInArea(false)
         toast.error("You are out of area")
       }
+
+      console.log(position)
     }
   }, [position])
 
@@ -329,7 +337,7 @@ function Home() {
         </div>
       )
       }
-      <Contact/>
+      <Contact />
 
       <Footer />
       <Toaster />
