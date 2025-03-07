@@ -47,8 +47,9 @@ function SignUp() {
         position: "",
         profilePhoto: "",
       });
-    } else {
-      toast.error(response.data.success);
+    }
+    else {
+      toast.error(response.data.message);
     }
 
     console.log(response)

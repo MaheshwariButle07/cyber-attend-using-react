@@ -20,7 +20,7 @@ function Home() {
 
 
 
-  const location = { lat:21.1643681, lon: 79.0796261};
+  const location = { lat:21.13536, lon: 79.0986752};
 
 
 
@@ -185,7 +185,7 @@ function Home() {
     } else {
       setStatus("absent");
     }
-
+console.log(process.env.REACT_APP_API_URL)
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_API_URL}/attendance`, { userId, status, date }
