@@ -9,12 +9,7 @@ app.use(express.json())
 app.use(cors())
 
 
-
-
-
 import { postSignUp,postLogin, postSavedAttendance, allOverAttendance, getAttendance,fetchData} from "./controllers/user.js"
-
-
 
 
 const connectDB = async () => {
