@@ -1,4 +1,4 @@
-# **Employee Attendance & Leave Management System**  
+# **Cyber Attend**  
 
 ## **Overview**  
 This project is an **Employee Attendance and Leave Management System**, allowing employees to:  
@@ -26,3 +26,25 @@ This project is an **Employee Attendance and Leave Management System**, allowing
 - **Database**: MongoDB  
 - **Geolocation API**: Used to track employees' locations for attendance.  
 - **API Integration**: Gmail API (for sending leave requests).
+
+## **Screenshots**  
+- **Dashboard**: 
+![Dashboard Screenshot](Screenshot 2025-03-07 164722.png)
+
+- **Events & Attendance Overview**: 
+![Overview Screenshot](Screenshot 2025-03-07 164743.png)
+
+- **Leave Application Form**: 
+![Leave Form Screenshot](Screenshot 2025-03-07 164752.png)
+
+- **Calendar Page**:
+
+
+
+
+
+
+
+
+## **Links**  
+- **Website Link**: https://cyber-attend-client.vercel.app/
